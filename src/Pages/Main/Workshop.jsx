@@ -3,16 +3,16 @@ import { FaSearch } from "react-icons/fa";
 
 const Workshop = () => {
   const data = [
-    { id: 1, title: "Introduction to AI", category: "AI" },
-    { id: 2, title: "React JS Basics", category: "React JS" },
-    { id: 3, title: "Advanced Data Science", category: "Data Sci..." },
-    { id: 4, title: "Web Development with HTML", category: "Web Development" },
-    { id: 5, title: "Machine Learning Techniques", category: "AI" },
-    { id: 6, title: "Advanced Data Science 2 ", category: "Data Sci" },
+    { id: 1, title: "Introduction to AI", category: "online" },
+    { id: 2, title: "React JS Basics", category: "online" },
+    { id: 3, title: "Advanced Data Science", category: "offline" },
+    { id: 4, title: "Web Development with HTML", category: "offline" },
+    { id: 5, title: "Machine Learning Techniques", category: "online" },
+    { id: 6, title: "Advanced Data Science 2 ", category: "offline" },
   ];
   const data2 = [
-    { id: 1, title: "Introduction to AI", category: "AI" },
-    { id: 2, title: "React JS Basics", category: "React JS" },
+    { id: 1, title: "Introduction to AI", category: "online" },
+    { id: 2, title: "React JS Basics", category: "offline" },
   ];
   const [filteredData, setFilteredData] = useState(data);
 
@@ -21,12 +21,12 @@ const Workshop = () => {
   };
 
   const filterDataScience = () => {
-    const filtered = data.filter((item) => item.category === "Data Sci...");
+    const filtered = data.filter((item) => item.category === "offline");
     setFilteredData(filtered);
   };
 
   const filterAI = () => {
-    const filtered = data.filter((item) => item.category === "AI");
+    const filtered = data.filter((item) => item.category === "online");
     setFilteredData(filtered);
   };
 
@@ -61,13 +61,13 @@ const Workshop = () => {
               className="px-4 py-2 border-r border-white  text-center cursor-pointer"
               onClick={filterAI}
             >
-              AI
+              online
             </button>
             <button
               className="px-4 py-2 border-r border-white  text-center cursor-pointer"
               onClick={filterDataScience}
             >
-              Data Science
+              offline
             </button>
           </div>
 
