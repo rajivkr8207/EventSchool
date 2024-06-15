@@ -13,8 +13,8 @@ const Certificate = () => {
           <div className="lg:w-[30%] w-full">
             <img src={work} alt="" />
           </div>
-          <div className="lg:w-1/2 w-full flex   items-center lg:text-2xl text-lg">
-            <p className="font-['Kulim Park', sans-serif] text-center">
+          <div className="lg:w-1/2 w-full flex   items-center lg:text-2xl text-lg lg:px-0 px-2" >
+            <p className="font-['Kulim Park', sans-serif] text-left">
               We curate and deliver high-quality workshops tailored to meet your
               unique needs, providing practical knowledge and hands-on
               experience. Whether upskilling your team, introducing new
@@ -27,8 +27,8 @@ const Certificate = () => {
         </h1>
 
         <div className="flex justify-center lg:flex-row flex-col gap-3">
-          <div className="lg:w-1/2 w-full flex   items-center lg:text-2xl text-lg">
-            <p className="font-['Kulim Park', sans-serif] text-center">
+          <div className="lg:w-[40%] w-full flex   items-center lg:text-2xl text-lg lg:px-0 px-2">
+            <p className="font-['Kulim Park', sans-serif] text-left">
               We curate and deliver high-quality workshops tailored to meet your
               unique needs, providing practical knowledge and hands-on
               experience. Whether upskilling your team, introducing new
