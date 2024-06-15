@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { FaSearch } from "react-icons/fa";
 
 const Workshop = () => {
   const data = [
@@ -15,6 +14,7 @@ const Workshop = () => {
     { id: 2, title: "React JS Basics", category: "offline" },
   ];
   const [filteredData, setFilteredData] = useState(data);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const filterAll = () => {
     setFilteredData(data);
@@ -30,6 +30,14 @@ const Workshop = () => {
     setFilteredData(filtered);
   };
 
+  const handleSearch = (event) => {
+    const searchValue = event.target.value.toLowerCase();
+    setSearchTerm(searchValue);
+    const filtered = data.filter((item) =>
+      item.title.toLowerCase().includes(searchValue)
+    );
+    setFilteredData(filtered);
+  };
   return (
     <>
       <div className="my-5">
@@ -41,10 +49,9 @@ const Workshop = () => {
                 type="text"
                 className="px-5 w-full bg-transparent text-white outline-none placeholder:text-white"
                 placeholder="Search Here"
+                onChange={handleSearch}
               />
-              <button className="px-2 border-l border-slate-500 my-auto pt-1">
-                <FaSearch className="text-lg my-auto text-[#666666]" />
-              </button>
+              
             </div>
           </div>
         </div>
