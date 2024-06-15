@@ -15,6 +15,7 @@ const Workshop = () => {
   ];
   const [filteredData, setFilteredData] = useState(data);
   const [searchTerm, setSearchTerm] = useState("");
+  const [error, setError] = useState("");
 
   const filterAll = () => {
     setFilteredData(data);
@@ -34,9 +35,11 @@ const Workshop = () => {
     const searchValue = event.target.value.toLowerCase();
     setSearchTerm(searchValue);
     const filtered = data.filter((item) =>
-      item.title.toLowerCase().includes(searchValue)
+      item.title.toLowerCase().includes(searchValue) || item.category.toLowerCase().includes(searchValue)
+    
     );
     setFilteredData(filtered);
+    setError(filtered.length === 0 ? "No matches found" : "");
   };
   return (
     <>
@@ -83,10 +86,8 @@ const Workshop = () => {
 
             {/* <h1>Filter</h1> */}
           </div>
-          {/* <div className="w-[18rem] h-[10rem] bg-[#BA2727] relative rounded-lg ">
-    <div className="absolute top-[-1rem] left-[2rem] w-[45%] bg-[#E11515] h-[2rem] rounded-lg shadow-black shadow-md text-2xl px-3"> AI mL</div>
-
-    </div> */}
+          {error && <p className="text-red-600 text-center text-2xl">{error}</p>}
+          
           <ul className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6 my-5  border-b border-white py-3">
             {filteredData.map((item) => (
               <li key={item.id} className="  shadow-md mx-auto ">
